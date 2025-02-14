@@ -66,6 +66,22 @@ class CardImage:
         * Otherwise, use `self.name` with `self.drive_id` in parentheses in the `cards` directory as the file path.
         """
 
+        print('GET FILE NAME', self.drive_id, self.name, self.file_path)
+
+        if 'WUBRG' in self.drive_id:
+            self.file_path = self.drive_id
+            self.name = os.path.basename(self.file_path)
+            return
+
+        
+        name_split = self.name.rsplit(".", 1)
+        file_path = os.path.join(
+            image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+        )
+        self.file_path = self.drive_id
+        self.name = os.path.basename(self.file_path)
+        return
+
         if file_exists(self.drive_id):
             self.file_path = self.drive_id
             self.name = os.path.basename(self.file_path)
@@ -148,9 +164,7 @@ class CardImage:
     ) -> None:
         try:
             if not self.file_exists() and not self.errored and self.file_path is not None:
-                self.errored = not download_google_drive_file(
-                    drive_id=self.drive_id, file_path=self.file_path, post_processing_config=post_processing_config
-                )
+                self.errored = False
 
             if self.file_exists() and not self.errored:
                 self.downloaded = True

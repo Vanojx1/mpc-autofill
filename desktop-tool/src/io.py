@@ -23,6 +23,7 @@ thread_local = threading.local()  # Should only be called once per thread
 
 
 def find_or_create_google_drive_service() -> Resource:
+    return None
     if (service := getattr(thread_local, "google_drive_service", None)) is None:
         logging.debug("Getting Google Drive API credentials...")
         creds = ServiceAccountCredentials.from_json_keyfile_name(
@@ -111,7 +112,7 @@ def get_google_drive_file_name(drive_id: str) -> Optional[str]:
     """
     Retrieve the name for the Google Drive file identified by `drive_id`.
     """
-
+    return None
     if not drive_id:
         return None
     service = find_or_create_google_drive_service()

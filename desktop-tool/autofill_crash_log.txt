@@ -1,0 +1,493 @@
+[ERROR 2025-02-03 17:42:08,462] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 537, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 514, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 280, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 108, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 75, in generate_file_path
+    self.retrieve_card_name()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 59, in retrieve_card_name
+    self.name = get_google_drive_file_name(drive_id=self.drive_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\io.py", line 117, in get_google_drive_file_name
+    service = find_or_create_google_drive_service()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\io.py", line 28, in find_or_create_google_drive_service
+    creds = ServiceAccountCredentials.from_json_keyfile_name(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\oauth2client\service_account.py", line 219, in from_json_keyfile_name
+    with open(filename, 'r') as file_obj:
+         ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\nvanoni\\Projects\\Misc\\mpc-autofill\\desktop-tool\\client_secrets.json'
+[ERROR 2025-02-03 17:45:14,213] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 537, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 514, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 280, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 108, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 75, in generate_file_path
+    self.retrieve_card_name()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 59, in retrieve_card_name
+    self.name = get_google_drive_file_name(drive_id=self.drive_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\io.py", line 119, in get_google_drive_file_name
+    response = execute_google_drive_api_call(service.files().get(fileId=drive_id))
+                                             ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'files'
+[ERROR 2025-02-03 17:45:58,921] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 537, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 514, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 280, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 108, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 75, in generate_file_path
+    self.retrieve_card_name()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 59, in retrieve_card_name
+    self.name = get_google_drive_file_name(drive_id=self.drive_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\io.py", line 119, in get_google_drive_file_name
+    response = execute_google_drive_api_call(service.files().get(fileId=drive_id))
+                                             ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'files'
+[ERROR 2025-02-03 17:46:16,987] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 537, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 514, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 280, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 108, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 75, in generate_file_path
+    self.retrieve_card_name()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 59, in retrieve_card_name
+    self.name = get_google_drive_file_name(drive_id=self.drive_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\io.py", line 119, in get_google_drive_file_name
+    response = execute_google_drive_api_call(service.files().get(fileId=drive_id))
+                                             ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'files'
+[ERROR 2025-02-03 17:47:32,963] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 572, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 537, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 514, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 280, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 108, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 75, in generate_file_path
+    self.retrieve_card_name()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 59, in retrieve_card_name
+    self.name = get_google_drive_file_name(drive_id=self.drive_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\io.py", line 120, in get_google_drive_file_name
+    response = execute_google_drive_api_call(service.files().get(fileId=drive_id))
+                                             ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'files'
+[ERROR 2025-02-03 17:50:52,322] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\utils.py", line 82, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\driver.py", line 486, in is_user_authenticated
+    return len(self.driver.find_elements(By.XPATH, f'//a[@href="{self.target_site.value.logout_url}"]')) == 1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 926, in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75BD602F5+28725]
+	(No symbol) [0x00007FF75BCC2AE0]
+	(No symbol) [0x00007FF75BB5510A]
+	(No symbol) [0x00007FF75BB4222C]
+	(No symbol) [0x00007FF75BB4219C]
+	(No symbol) [0x00007FF75BB408B6]
+	(No symbol) [0x00007FF75BB4163F]
+	(No symbol) [0x00007FF75BB59791]
+	(No symbol) [0x00007FF75BB5A27A]
+	(No symbol) [0x00007FF75BB5EABC]
+	(No symbol) [0x00007FF75BB5EB8F]
+	(No symbol) [0x00007FF75BBA8C85]
+	(No symbol) [0x00007FF75BBA95FC]
+	(No symbol) [0x00007FF75BBF3437]
+	(No symbol) [0x00007FF75BBCFFEF]
+	(No symbol) [0x00007FF75BBF0181]
+	(No symbol) [0x00007FF75BBCFD53]
+	(No symbol) [0x00007FF75BB9A0E3]
+	(No symbol) [0x00007FF75BB9B471]
+	GetHandleVerifier [0x00007FF75C08F30D+3366989]
+	GetHandleVerifier [0x00007FF75C0A12F0+3440688]
+	GetHandleVerifier [0x00007FF75C0978FD+3401277]
+	GetHandleVerifier [0x00007FF75BE2AAAB+858091]
+	(No symbol) [0x00007FF75BCCE74F]
+	(No symbol) [0x00007FF75BCCA304]
+	(No symbol) [0x00007FF75BCCA49D]
+	(No symbol) [0x00007FF75BCB8B69]
+	BaseThreadInitThunk [0x00007FF9AFF1259D+29]
+	RtlUserThreadStart [0x00007FF9B218AF38+40]
+
+[ERROR 2025-02-03 17:52:16,406] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 547, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 524, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 290, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 118, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 73, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:03:49,839] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 547, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 524, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 290, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 118, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 73, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:04:13,582] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 547, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 524, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 290, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 118, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 73, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:04:43,406] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 547, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 524, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 290, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 118, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 73, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:05:45,941] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 582, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 547, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 524, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 290, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 118, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 73, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:06:35,081] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 588, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 588, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 553, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 530, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 296, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 124, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 79, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:06:53,565] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 588, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 588, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 553, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 530, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 296, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 124, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 79, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:07:16,568] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\autofill.py", line 161, in main
+    orders=CardOrder.from_xmls_in_folder(), target_site=target_site, combine_orders=combine_orders
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 589, in from_xmls_in_folder
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 589, in <listcomp>
+    return [cls.from_file_path(file_path) for file_path in file_paths]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 554, in from_file_path
+    order = cls.from_element(xml.getroot(), name=file_name, allowed_to_exceed_project_max_size=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 531, in from_element
+    backs = CardImageCollection.from_element(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 297, in from_element
+    card_image_collection.append(CardImage(drive_id=fill_image_id.strip(' "'), slots=missing_slots))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<attrs generated init src.order.CardImage>", line 13, in __init__
+    self.__attrs_post_init__()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 125, in __attrs_post_init__
+    self.generate_file_path()
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\order.py", line 80, in generate_file_path
+    image_directory(), sanitize(f"{name_split[0]} ({self.drive_id}).{name_split[1]}")
+                                                                     ~~~~~~~~~~^^^
+IndexError: list index out of range
+[ERROR 2025-02-03 18:10:47,129] Uncaught exception
+Traceback (most recent call last):
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\utils.py", line 82, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\src\driver.py", line 486, in is_user_authenticated
+    return len(self.driver.find_elements(By.XPATH, f'//a[@href="{self.target_site.value.logout_url}"]')) == 1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 926, in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\nvanoni\Projects\Misc\mpc-autofill\desktop-tool\env\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75BD602F5+28725]
+	(No symbol) [0x00007FF75BCC2AE0]
+	(No symbol) [0x00007FF75BB5510A]
+	(No symbol) [0x00007FF75BB4222C]
+	(No symbol) [0x00007FF75BB4219C]
+	(No symbol) [0x00007FF75BB408B6]
+	(No symbol) [0x00007FF75BB4163F]
+	(No symbol) [0x00007FF75BB59791]
+	(No symbol) [0x00007FF75BB5A27A]
+	(No symbol) [0x00007FF75BB5EABC]
+	(No symbol) [0x00007FF75BB5EB8F]
+	(No symbol) [0x00007FF75BBA8C85]
+	(No symbol) [0x00007FF75BBA95FC]
+	(No symbol) [0x00007FF75BBF3437]
+	(No symbol) [0x00007FF75BBCFFEF]
+	(No symbol) [0x00007FF75BBF0181]
+	(No symbol) [0x00007FF75BBCFD53]
+	(No symbol) [0x00007FF75BB9A0E3]
+	(No symbol) [0x00007FF75BB9B471]
+	GetHandleVerifier [0x00007FF75C08F30D+3366989]
+	GetHandleVerifier [0x00007FF75C0A12F0+3440688]
+	GetHandleVerifier [0x00007FF75C0978FD+3401277]
+	GetHandleVerifier [0x00007FF75BE2AAAB+858091]
+	(No symbol) [0x00007FF75BCCE74F]
+	(No symbol) [0x00007FF75BCCA304]
+	(No symbol) [0x00007FF75BCCA49D]
+	(No symbol) [0x00007FF75BCB8B69]
+	BaseThreadInitThunk [0x00007FF9AFF1259D+29]
+	RtlUserThreadStart [0x00007FF9B218AF38+40]
+

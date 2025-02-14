@@ -1,6 +1,7 @@
 # Ignore XML files we might use for debugging
 cards.xml
 cards/*
+desktop-tool/cards/*
 
 # Ignore pyinstaller stuff
 __pycache__/*
@@ -170,11 +171,7 @@ elasticsearch
 MPCAutofill/exported_drives.csv
 MPCAutofill/drives.csv
 /MPCAutofill/node_modules/
-/schemas/node_modules/
 /MPCAutofill/cardpicker/static/css/
 /static/
 *.woff
 *.woff2
-frontend/public/mockServiceWorker.js
-/image-cdn/node_modules/*
-/image-cdn/.wrangler/*
